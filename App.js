@@ -5,7 +5,7 @@ import { ThemeProvider } from 'styled-components/native';
 import { RestaurantsScreen } from './src/features/restaurants/screens/restaurants.screen';
 import { theme } from './src/infrastructure/theme';
 
-import AppLoading from 'expo-app-loading';
+/*import AppLoading from 'expo-app-loading';*/
 import { useFonts, Oswald_400Regular } from '@expo-google-fonts/oswald';
 import { Lato_400Regular } from '@expo-google-fonts/lato';
 export default function App() {
@@ -18,7 +18,7 @@ export default function App() {
   });
 
   if (!oswaldLoaded || !latoLoaded) {
-    return <AppLoading />;
+    return null;
   } else {
     return (
       <>

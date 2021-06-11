@@ -1,14 +1,10 @@
 import React from 'react';
-import styled from 'styled-components/native';
-import { Image, View } from 'react-native';
-import { Card } from 'react-native-paper';
-import { SvgXml } from 'react-native-svg';
-
-import open from '../../../../assets/open';
-import star from '../../../../assets/star';
 
 import { Spacer } from '../../../components/spacer/spacer.component';
 import { Text } from '../../../components/typography/text.component';
+
+import open from '../../../../assets/open';
+import star from '../../../../assets/star';
 
 import {
   RestaurantCard,
@@ -19,6 +15,8 @@ import {
   Section,
   SectionEnd,
   Icon,
+  Open,
+  Star,
 } from './restaurant-info-card.styles';
 
 export const RestaurantInfoCard = ({ restaurant = {} }) => {
@@ -43,7 +41,7 @@ export const RestaurantInfoCard = ({ restaurant = {} }) => {
         <Section>
           <Rating>
             {ratingArray.map((_, i) => (
-              <SvgXml xml={star} width={20} height={20} key={i} />
+              <Star xml={star} key={i} />
             ))}
           </Rating>
           <SectionEnd>
@@ -53,7 +51,7 @@ export const RestaurantInfoCard = ({ restaurant = {} }) => {
               )}
             </Spacer>
             <Spacer position="right" size="medium">
-              {isOpen && <SvgXml xml={open} width={20} height={20} />}
+              {isOpen && <Open xml={open} />}
             </Spacer>
             <Icon source={{ uri: icon }} />
           </SectionEnd>
